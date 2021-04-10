@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #000000;
+    background-image: linear-gradient(91deg, #000000 0%, #414141 74%);
+}
+
+.wrapper{
+    display: flex;
+    position: relative;
+}
+
+.wrapper .main_content{
+    width: 100%;
+    /* margin-left: 40%; */
+    margin-left: 15%;
+}
+
+h1{
+    text-align: center;
+}
+
+/* FORM BOX */
+.form-box{
+    width: 380px;
+    height: 550px;
+    /* position: absolute; */
+    background: transparent;
+    margin: 6% auto;
+    /* margin-top: 20%; */
+    padding: 5px;
+  
+}
+.form-box .button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+    /* background: red; */
+}
+  
+.form-box h1{
+    color: white;
+}
+  
+.login-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+.login-failure{
+    color: white;
+}
+  
+.register-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+.register-errors{
+    color: white;
+}
+
+.register-success{
+    color: white;
+}
+  
+.btn-login{
+    top: 0;
+    left: 0px;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+  
+.btn-register{
+    top: 0;
+    left: 110px;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+  
+.login-errors{
+    color: white;
+}
+  
+  
+  
+.input-group{
+    top: 180px;
+    /* position: absolute; */
+    /* width: 280px; */
+    transition: .5s;
+}
+  
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+  
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+#login{
+    left: 50px;
+}
+  
+#register{
+    left: 50px;
+}
+  
+.selected{
+    background: #594f8d;
+}
+
+.loggedIn{
+    margin: 0 auto;
+}
+/* CARD */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top: 25px;
+    color: white;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+.card button:hover {
+    opacity: 0.7;
+}
+
+.buttons-wrapper{
+    /* background-color: white; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.action-btn{
+    padding: 5px;
+    border-radius: 15%;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: gray;
+    color: white;
+}
+
+.add-post-wrapper{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.submit-post-btn{
+    display: block;
+    background-color: green;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.error-list{
+    color: white;
+}

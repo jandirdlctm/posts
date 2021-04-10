@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <div v-if="!authenticated" class="form-box">
+            <h1>WELCOME TO SHARE YOUR FELL</h1>
+            <div class="button-box">
+                <div v-bind:class="{ 'btn-login': logInMode, 'btn-register' : registerMode}"></div>
+                <button v-on:click="logInModeOn" type="button" class="login-btn">Log In</button>
+                <button v-on:click="registerModeOn" type="button" class="register-btn">Register</button>
+            </div>
+            <!-- SIGN IN FORM -->
+            <form v-if="logInMode && !authenticated" id="login" class="input-group">
+                <div v-if="logInFailure" class="login-failure">
+                    <p>{{logInFailureMessage}}</p>
+                </div>
+                <div v-if="logInInputErrorsMode" class="login-errors">
+                    <ul>
+                        <li v-for="error in logInInputErrors">{{error}}</li>
+                    </ul>
+                </div>
+                <input type="text" v-model="logInEmailInput" class="input-field" placeholder="Email">
+                <input type="password" v-model="logInPasswordInput" class="input-field" placeholder="Enter Password">
+                <button type="button" v-on:click="logInUser" class="submit-btn">Log In</button>
+            </form>
+            <!-- REGISTER FORM -->
+            <form v-if="registerMode && !authenticated" id="register" class="input-group">
+
+                <div v-if="registerSuccess" class="register-success">
+                    <p>{{registerSuccessMessage}}</p>
+                </div>
+
+                <div v-if="registerInputErrorsMode" class="register-errors">
+                    <ul>
+                        <li v-for="error in registerInputErrors">{{error}}</li>
+                    </ul>
+                </div>
+
+                <input type="text" v-model="firstNameInput" class="input-field" placeholder="First Name">
+                <input type="text" v-model="lastNameInput" class="input-field" placeholder="Last Name">
+                <input type="email" v-model="emailInput" class="input-field" placeholder="Enter Email">
+                <input type="password" v-model="passwordInput" class="input-field" placeholder="Enter Password">
+                <button v-on:click="registerUser" type="button" class="submit-btn">Register</button>
+            </form>
+        </div>
+        <div v-if="authenticated" class="loggedIn">
+            <div class="buttons-wrapper">
+                <button class="action-btn" @click="loadPosts">Show Posts</button>
+                <button class="action-btn" @click="addPostMode = !addPostMode">ADD POST</button>
+                <button class="action-btn" @click="signOutAction" type="submit">Sign Out</button>
+            </div>
+            
+            <div v-if="addPostMode">
+                <div v-if="postInputErrorsMode">
+                    <ul class="error-list">
+                        <li v-for="error in postInputErrors">{{error}}</li>
+                    </ul>
+                </div>
+                <div class="add-post-wrapper">
+                    <input type="text" v-model="postFirstNameInput" placeholder="First Name">
+                    <input type="text" v-model="postLastNameInput" placeholder="Last Name">
+                    <input type="text" v-model="postInput" placeholder="Post">
+                    <button class="submit-post-btn" @click="addPostSubmitButtonClicked" type="submit">SUBMIT POST</button>
+                </div>
+                
+            </div>
+            <div>
+                
+            </div>
+            <h1 style="color: white">POSTS</h1>
+            <div v-if="showPostMode" v-for="post in postsArray" class="card">
+                
+                <h1>{{post.firstName}} {{post.lastName}}</h1>
+                <p>{{post.post}}</p>
+                <p>Posted: {{post.date}}</p>
+                <p><button @click="deletePost(post)">Delete</button></p>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
